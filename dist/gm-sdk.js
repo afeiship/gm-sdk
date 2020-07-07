@@ -985,6 +985,301 @@
 
 	});
 
+	var nextJson = createCommonjsModule(function (module) {
+	/*!
+	 * name: @feizheng/next-json
+	 * url: https://github.com/afeiship/next-json
+	 * version: 1.0.0
+	 * date: 2019-12-06T08:45:34.825Z
+	 * license: MIT
+	 */
+
+	(function() {
+	  var global = global || this || window || Function('return this')();
+	  var nx = global.nx || nextJsCore2;
+
+	  nx.json = JSON;
+	  nx.parse = function(inValue) {
+	    try {
+	      return JSON.parse(inValue);
+	    } catch (_) {}
+	    return inValue;
+	  };
+
+	  nx.stringify = function(inValue) {
+	    try {
+	      return JSON.stringify(inValue);
+	    } catch (_) {}
+	    return inValue;
+	  };
+
+	  if ( module.exports) {
+	    module.exports = {
+	      json: nx.json,
+	      parse: nx.parse,
+	      stringify: nx.stringify
+	    };
+	  }
+	})();
+
+
+	});
+	var nextJson_1 = nextJson.json;
+	var nextJson_2 = nextJson.parse;
+	var nextJson_3 = nextJson.stringify;
+
+	var nextSlice2str = createCommonjsModule(function (module) {
+	/*!
+	 * name: @feizheng/next-slice2str
+	 * description: Slice string to two part.
+	 * url: https://github.com/afeiship/next-slice2str
+	 * version: 1.0.0
+	 * date: 2019-12-18 19:21:02
+	 * license: MIT
+	 */
+
+	(function() {
+	  var global = global || this || window || Function('return this')();
+	  var nx = global.nx || nextJsCore2;
+
+	  nx.slice2str = function(inString, inIndex, inStep) {
+	    if (!inString && inString.length <= inIndex) return;
+	    var step = inStep || 0;
+	    return [inString.substr(0, inIndex), inString.substr(inIndex + step)];
+	  };
+
+	  if ( module.exports) {
+	    module.exports = nx.slice2str;
+	  }
+	})();
+
+
+	});
+
+	var nextAbstractStorage = createCommonjsModule(function (module) {
+	/*!
+	 * name: @feizheng/next-abstract-storage
+	 * description: An abstract storage based on next.
+	 * homepage: https://github.com/afeiship/next-abstract-storage
+	 * version: 2.1.0
+	 * date: 2020-07-06T10:42:24.983Z
+	 * license: MIT
+	 */
+
+	(function () {
+	  var global = global || this || window || Function('return this')();
+	  var nx = global.nx || nextJsCore2;
+
+	  var EMPTY_STR = '';
+	  var SEPARATOR = '@';
+
+	  // import packages:
+	  var _ = nx.json || nextJson;
+	  _ = nx.slice2str || nextSlice2str;
+
+	  var NxAbstractStorage = nx.declare('nx.AbstractStorage', {
+	    methods: {
+	      init: function (inOptions) {
+	        this.engine = inOptions.engine;
+	        this.prefix = inOptions.prefix || EMPTY_STR;
+	        this.options = inOptions;
+	        this.setAccessor();
+	      },
+	      setAccessor: function () {
+	        this.accessor = {
+	          get: this.options.get || 'getItem',
+	          set: this.options.set || 'setItem',
+	          remove: this.options.remove || 'removeItem',
+	          clear: this.options.clear || 'clear'
+	        };
+	      },
+	      serialize: function (inTarget) {
+	        return nx.stringify(inTarget);
+	      },
+	      deserialize: function (inString) {
+	        return nx.parse(inString);
+	      },
+	      set: function (inKey, inValue) {
+	        var index = inKey.indexOf('.');
+	        if (index > -1) {
+	          var paths = nx.slice2str(inKey, index, 1);
+	          var context = this.get(paths[0]) || {};
+	          nx.set(context, paths[1], inValue);
+	          this.set(paths[0], context);
+	        } else {
+	          this.engine[this.accessor.set](this.__key(inKey), this.serialize(inValue));
+	        }
+	      },
+	      sets: function (inObject) {
+	        nx.each(
+	          inObject,
+	          function (key, value) {
+	            this.set(key, value);
+	          },
+	          this
+	        );
+	      },
+	      get: function (inKey) {
+	        var index = inKey.indexOf('.');
+	        if (index > -1) {
+	          var paths = nx.slice2str(inKey, index, 1);
+	          var context = this.get(paths[0]) || {};
+	          return nx.get(context, paths[1]);
+	        } else {
+	          var value = this.engine[this.accessor.get](this.__key(inKey));
+	          return this.deserialize(value);
+	        }
+	      },
+	      gets: function (inKeys) {
+	        var result = {};
+	        var keys = this.__keys(inKeys);
+	        nx.each(
+	          keys,
+	          function (_, key) {
+	            result[key] = this.get(key);
+	          },
+	          this
+	        );
+	        return result;
+	      },
+	      del: function (inKey) {
+	        this.engine[this.accessor.remove](this.__key(inKey));
+	      },
+	      dels: function (inKeys) {
+	        var keys = this.__keys(inKeys);
+	        nx.each(
+	          keys,
+	          function (_, key) {
+	            this.del(key);
+	          },
+	          this
+	        );
+	      },
+	      clear: function () {
+	        this.engine[this.accessor.clear]();
+	      },
+	      keys: function () {
+	        return Object.keys(this.engine);
+	      },
+	      __key: function (inKey) {
+	        var prefix = this.prefix;
+	        return prefix ? [prefix, SEPARATOR, inKey].join(EMPTY_STR) : inKey;
+	      },
+	      __keys: function (inKeys) {
+	        var length_, keys;
+	        var allNsKeys = [];
+	        if (!Array.isArray(inKeys)) {
+	          keys = this.keys();
+	          length_ = this.prefix.length + 1;
+	          nx.each(
+	            keys,
+	            function (_, item) {
+	              if (this.prefix && item.indexOf(this.prefix + SEPARATOR) === 0) {
+	                allNsKeys.push(item.slice(length_));
+	              }
+	            },
+	            this
+	          );
+	          return allNsKeys.length ? allNsKeys : keys;
+	        }
+	        return inKeys;
+	      }
+	    }
+	  });
+
+	  if ( module.exports) {
+	    module.exports = NxAbstractStorage;
+	  }
+	})();
+
+
+	});
+
+	var nextGmStoreEngine = createCommonjsModule(function (module) {
+	/*!
+	 * name: @feizheng/next-gm-store-engine
+	 * description: Store engin for tampermonkey GM_storage.
+	 * homepage: https://github.com/afeiship/next-gm-store-engine
+	 * version: 1.0.0
+	 * date: 2020-07-06T10:49:52.850Z
+	 * license: MIT
+	 */
+
+	(function () {
+	  var global = global || this || window || Function('return this')();
+	  var nx = global.nx || nextJsCore2;
+
+	  var NxGmStoreEngine = nx.declare('nx.GmStoreEngine', {
+	    statics: {
+	      setItem: function (inKey, inValue) {
+	        return GM_setValue(inKey, inValue);
+	      },
+	      getItem: function (inKey) {
+	        return GM_getValue(inKey);
+	      },
+	      removeItem: function (inKey) {
+	        GM_deleteValue(inKey);
+	      },
+	      clear: function () {
+	        var keys = GM_listValues();
+	        keys.forEach(function (key) {
+	          this.removeItem(key);
+	        }, this);
+	      }
+	    }
+	  });
+
+	  if ( module.exports) {
+	    module.exports = NxGmStoreEngine;
+	  }
+	})();
+
+
+	});
+
+	var nextGmStorage = createCommonjsModule(function (module) {
+	/*!
+	 * name: @feizheng/next-gm-storage
+	 * description: Storage implement for GM tampermonkey.
+	 * homepage: https://github.com/afeiship/next-gm-storage
+	 * version: 1.0.0
+	 * date: 2020-07-06T10:55:38.756Z
+	 * license: MIT
+	 */
+
+	(function () {
+	  var global = global || this || window || Function('return this')();
+	  var nx = global.nx || nextJsCore2;
+	  var NxAbstractStorage = nx.AbstractStorage || nextAbstractStorage;
+	  var NxGmStoreEngine = nx.GmStoreEngine || nextGmStoreEngine;
+
+
+	  var NxGmStorage = nx.declare('nx.GmStorage', {
+	    extends: NxAbstractStorage,
+	    methods: {
+	      init: function (inPrefix) {
+	        this.base({
+	          engine: NxGmStoreEngine,
+	          prefix: inPrefix || ''
+	        });
+	      },
+	      serialize: function (inTarget) {
+	        return inTarget;
+	      },
+	      keys: function () {
+	        return GM_listValues();
+	      }
+	    }
+	  });
+
+	  if ( module.exports) {
+	    module.exports = NxGmStorage;
+	  }
+	})();
+
+
+	});
+
 	var http = nx.GmXhr.getInstance();
 
 	nx.declare({
@@ -995,7 +1290,8 @@
 	        {
 	          nx: unsafeWindow.nx || nx,
 	          gmsdk: {
-	            http
+	            http,
+	            store: new nx.GmStorage('aric')
 	          }
 	        }
 	      );

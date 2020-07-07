@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/gm-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Sdk for tampermonkey.",
   "homepage": "https://github.com/afeiship/gm-sdk",
   "author": {
@@ -21,6 +21,7 @@
     "rollup-plugin-node-resolve": "^5.2.0"
   },
   "dependencies": {
+    "@feizheng/next-gm-storage": "^1.0.0",
     "@feizheng/next-gm-xhr": "^1.0.1",
     "@feizheng/next-js-core2": "^2.6.0"
   }

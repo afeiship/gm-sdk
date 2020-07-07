@@ -1,5 +1,6 @@
 import '@feizheng/next-js-core2';
 import '@feizheng/next-gm-xhr';
+import '@feizheng/next-gm-storage';
 
 var http = nx.GmXhr.getInstance();
 
@@ -11,7 +12,8 @@ nx.declare({
         {
           nx: unsafeWindow.nx || nx,
           gmsdk: {
-            http
+            http,
+            store: new nx.GmStorage('aric')
           }
         }
       )
