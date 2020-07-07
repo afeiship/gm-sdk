@@ -6,7 +6,6 @@
 // @author       <%= author %>
 // @match        *://*/*
 // @require  https://cdn.jsdelivr.net/npm/@feizheng/next-js-core2@2.5.0/dist/next-js-core2.js
-// @require tampermonkey://vendor/jquery.js
 // @grant GM_addStyle
 // @grant GM_deleteValue
 // @grant GM_listValues
