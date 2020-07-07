@@ -1,6 +1,7 @@
 import '@feizheng/next-js-core2';
 import NxGmXhr from '@feizheng/next-gm-xhr';
 import NxGmStorage from '@feizheng/next-gm-storage';
+import $ from 'jquery';
 
 var http = NxGmXhr.getInstance();
 var apis = [
@@ -34,10 +35,10 @@ nx.declare({
         unsafeWindow,
         {
           nx: unsafeWindow.nx || nx,
-          $: nx.GLOBAL.$,
-          version: '__VERSION__',
+          $: unsafeWindow.$ || $,
           gmsdk: nx.mix(
             {
+              version: '__VERSION__',
               http,
               store: new NxGmStorage('aric')
             },
