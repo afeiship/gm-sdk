@@ -15,3 +15,11 @@ gulpfile.js
 # vscode
 .vscode
 .history
+
+rollup.config.js
+
+npm notice 16.3kB dist/gm-sdk.js
+npm notice 253B   rollup.config.js
+npm notice 1.0kB  templates/std.js
+npm notice 601B   package.json
+npm notice 33B    README.md
