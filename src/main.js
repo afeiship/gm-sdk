@@ -6,8 +6,6 @@ var http = nx.GmXhr.getInstance();
 nx.declare({
   statics: {
     init: function () {
-      const { nx } = unsafeWindow;
-
       nx.mix(
         unsafeWindow,
         {
