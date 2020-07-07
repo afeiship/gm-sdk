@@ -1,8 +1,8 @@
+// gm-sdk v1.0.4 by afeiship
 (function (factory) {
 	typeof define === 'function' && define.amd ? define(factory) :
 	factory();
-}((function () { 'use strict';
-
+}((function () {
 	var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 	function createCommonjsModule(fn, module) {
