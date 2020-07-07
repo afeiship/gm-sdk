@@ -2,21 +2,35 @@
 import resolve from 'rollup-plugin-node-resolve';
 import filesize from 'rollup-plugin-filesize';
 import commonjs from 'rollup-plugin-commonjs';
-import banner from 'rollup-plugin-banner'
+import banner from 'rollup-plugin-banner';
+import { terser } from "rollup-plugin-terser";
 
+import '@feizheng/next-nice-comments';
 
+const comments = nx.niceComments(
+  [
+    'name: <%= pkg.name %>',
+    'description: <%= pkg.description %>',
+    'homepage: <%= pkg.homepage %>',
+    'version: <%= pkg.version %>',
+    'date: ' + new Date().toISOString(),
+    'license: <%= pkg.license %>'
+  ],
+  'pure'
+);
 
 export default {
   input: 'src/main.js',
   output: {
     strict: false,
     file: 'dist/gm-sdk.js',
-    format: 'umd'
+    format: 'umd',
   },
   plugins: [
     resolve(),
     commonjs(),
-    banner('gm-sdk v<%= pkg.version %> by <%= pkg.author.name %>'),
+    terser({ output: { comments: false } }),
+    banner(comments),
     filesize()
   ]
 };
