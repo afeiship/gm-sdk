@@ -36,19 +36,16 @@ nx.declare({
         {
           nx: unsafeWindow.nx || nx,
           $: unsafeWindow.$ || $,
-          gmsdk: nx.mix(
-            {
-              version: '__VERSION__',
-              http,
-              store: new NxGmStorage('aric')
-            },
-            this.generate(),
-          )
+          gmsdk: this.sdk()
         }
       )
     },
-    generate: function () {
-      var results = {};
+    sdk: function () {
+      var results = {
+        version: '__VERSION__',
+        http,
+        store: new NxGmStorage('aric')
+      };
       apis.forEach(function (api) {
         var shortName = api.split('_')[1];
         results[shortName] = nx.GLOBAL[api];
