@@ -3,7 +3,7 @@
  *  description: Sdk for tampermonkey.
  *  homepage: https://github.com/afeiship/gm-sdk
  *  version: 1.0.10
- *  date: 2020-07-07T14:27:23.947Z
+ *  date: 2020-07-07T14:31:36.358Z
  *  license: MIT
  */
 
