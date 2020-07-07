@@ -7,8 +7,20 @@
     "name": "afeiship",
     "email": "1290657123@qq.com"
   },
+  "scripts": {
+    "build": "rollup -c"
+  },
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "rollup": "^2.20.0",
+    "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "dependencies": {
+    "@feizheng/next-gm-xhr": "^1.0.1",
+    "@feizheng/next-js-core2": "^2.6.0"
   }
 }
