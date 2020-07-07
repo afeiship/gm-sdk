@@ -1,8 +1,8 @@
 import '@feizheng/next-js-core2';
-import '@feizheng/next-gm-xhr';
-import '@feizheng/next-gm-storage';
+import NxGmXhr from '@feizheng/next-gm-xhr';
+import NxGmStorage from '@feizheng/next-gm-storage';
 
-var http = nx.GmXhr.getInstance();
+var http = NxGmXhr.getInstance();
 var apis = [
   "GM_addStyle",
   "GM_deleteValue",
@@ -37,7 +37,7 @@ nx.declare({
           gmsdk: nx.mix(
             {
               http,
-              store: new nx.GmStorage('aric')
+              store: new NxGmStorage('aric')
             },
             this.generate(),
           )

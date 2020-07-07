@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/gm-sdk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Sdk for tampermonkey.",
   "homepage": "https://github.com/afeiship/gm-sdk",
   "author": {

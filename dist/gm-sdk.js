@@ -1,4 +1,4 @@
-// gm-sdk v1.0.5 by afeiship
+// gm-sdk v1.0.6 by afeiship
 (function (factory) {
 	typeof define === 'function' && define.amd ? define(factory) :
 	factory();
@@ -1280,7 +1280,7 @@
 
 	});
 
-	var http = nx.GmXhr.getInstance();
+	var http = nextGmXhr.getInstance();
 	var apis = [
 	  "GM_addStyle",
 	  "GM_deleteValue",
@@ -1315,7 +1315,7 @@
 	          gmsdk: nx.mix(
 	            {
 	              http,
-	              store: new nx.GmStorage('aric')
+	              store: new nextGmStorage('aric')
 	            },
 	            this.generate(),
 	          )
