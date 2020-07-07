@@ -1,4 +1,4 @@
-// gm-sdk v1.0.6 by afeiship
+// gm-sdk v1.0.7 by afeiship
 (function (factory) {
 	typeof define === 'function' && define.amd ? define(factory) :
 	factory();
@@ -1325,7 +1325,8 @@
 	    generate: function () {
 	      var results = {};
 	      apis.forEach(function (api) {
-	        results[api] = nx.GLOBAL[api];
+	        var shortName = api.split('_')[1];
+	        results[shortName] = nx.GLOBAL[api];
 	      });
 	      return results;
 	    }

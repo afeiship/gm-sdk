@@ -47,7 +47,8 @@ nx.declare({
     generate: function () {
       var results = {};
       apis.forEach(function (api) {
-        results[api] = nx.GLOBAL[api];
+        var shortName = api.split('_')[1];
+        results[shortName] = nx.GLOBAL[api];
       });
       return results;
     }
