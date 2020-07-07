@@ -1,4 +1,4 @@
-// gm-sdk v1.0.4 by afeiship
+// gm-sdk v1.0.5 by afeiship
 (function (factory) {
 	typeof define === 'function' && define.amd ? define(factory) :
 	factory();
@@ -1281,6 +1281,29 @@
 	});
 
 	var http = nx.GmXhr.getInstance();
+	var apis = [
+	  "GM_addStyle",
+	  "GM_deleteValue",
+	  "GM_listValues",
+	  "GM_addValueChangeListener",
+	  "GM_removeValueChangeListener",
+	  "GM_setValue",
+	  "GM_getValue",
+	  "GM_log",
+	  "GM_getResourceText",
+	  "GM_getResourceURL",
+	  "GM_registerMenuCommand",
+	  "GM_unregisterMenuCommand",
+	  "GM_openInTab",
+	  "GM_xmlhttpRequest",
+	  "GM_download",
+	  "GM_getTab",
+	  "GM_saveTab",
+	  "GM_getTabs",
+	  "GM_notification",
+	  "GM_setClipboard",
+	  "GM_info"
+	];
 
 	nx.declare({
 	  statics: {
@@ -1289,12 +1312,22 @@
 	        unsafeWindow,
 	        {
 	          nx: unsafeWindow.nx || nx,
-	          gmsdk: {
-	            http,
-	            store: new nx.GmStorage('aric')
-	          }
+	          gmsdk: nx.mix(
+	            {
+	              http,
+	              store: new nx.GmStorage('aric')
+	            },
+	            this.generate(),
+	          )
 	        }
 	      );
+	    },
+	    generate: function () {
+	      var results = {};
+	      apis.forEach(function (api) {
+	        results[api] = nx.GLOBAL[api];
+	      });
+	      return results;
 	    }
 	  }
 	});
