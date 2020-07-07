@@ -34,6 +34,8 @@ nx.declare({
         unsafeWindow,
         {
           nx: unsafeWindow.nx || nx,
+          $: nx.GLOBAL.$,
+          version: '__VERSION__',
           gmsdk: nx.mix(
             {
               http,

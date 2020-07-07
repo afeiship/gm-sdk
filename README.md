@@ -6,7 +6,14 @@
 npm i @feizheng/gm-sdk
 ```
 
-## apis
+## sdk
+| api   | description   |
+| ----- | ------------- |
+| $     | jquery        |
+| nx    | next-js-core2 |
+| gmsdk | -             |
+
+## gmsdk apis
 | api                       | description  |
 | ------------------------- | ------------ |
 | `http`                    | gm-sdk       |
