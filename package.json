@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/gm-sdk",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Sdk for tampermonkey based on jQuery/nx.",
   "homepage": "https://github.com/afeiship/gm-sdk",
   "author": {
@@ -25,9 +25,9 @@
     "rollup-plugin-terser": "^6.1.0"
   },
   "dependencies": {
-    "@feizheng/next-gm-api": "^1.0.1",
+    "@feizheng/next-gm-api": "^1.0.2",
     "@feizheng/next-gm-storage": "^1.0.0",
-    "@feizheng/next-gm-xhr": "^1.0.1",
+    "@feizheng/next-gm-xhr": "^1.0.2",
     "@feizheng/next-js-core2": "^2.6.0",
     "jquery": "^3.5.1"
   }
