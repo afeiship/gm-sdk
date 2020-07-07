@@ -1,9 +1,14 @@
-# gm-sdk
-> Sdk for tampermonkey.
+<p align="center">
+  <a href="https://v5.getbootstrap.com/">
+    <img width="350" src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggisduaj9ij30om08caaf.jpg" alt="gm-sdk logo">
+  </a>
+</p>
 
-<center>
-  <img width="400" src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggisduaj9ij30om08caaf.jpg">
-</center>
+<h3 align="center">gm-sdk</h3>
+
+<p align="center">
+  Sdk for tampermonkey based on jQuery/nx.
+</p>
 
 [![version][version-image]][version-url]
 [![license][license-image]][license-url]
