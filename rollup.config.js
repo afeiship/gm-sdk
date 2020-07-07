@@ -1,6 +1,8 @@
 
 import resolve from 'rollup-plugin-node-resolve';
 import filesize from 'rollup-plugin-filesize';
+import commonjs from 'rollup-plugin-commonjs';
+
 
 export default {
   input: 'src/main.js',
@@ -10,6 +12,7 @@ export default {
   },
   plugins: [
     resolve(),
+    commonjs(),
     filesize()
   ]
 };

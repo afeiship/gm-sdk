@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/gm-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sdk for tampermonkey.",
   "homepage": "https://github.com/afeiship/gm-sdk",
   "author": {
@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "rollup": "^2.20.0",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-filesize": "^9.0.2",
     "rollup-plugin-node-resolve": "^5.2.0"
   },
