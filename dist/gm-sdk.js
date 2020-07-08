@@ -2,8 +2,8 @@
  *  name: @feizheng/gm-sdk
  *  description: Sdk for tampermonkey based on jQuery/nx.
  *  homepage: https://github.com/afeiship/gm-sdk
- *  version: 1.0.14
- *  date: 2020-07-07T23:23:29.358Z
+ *  version: 1.0.15
+ *  date: 2020-07-07T23:57:26.656Z
  *  license: MIT
  */
 
@@ -1293,8 +1293,8 @@
 	 * name: @feizheng/next-gm-api
 	 * description: APIs for tampermonkey.
 	 * homepage: https://github.com/afeiship/next-gm-api
-	 * version: 1.0.2
-	 * date: 2020-07-07T23:16:46.221Z
+	 * version: 1.0.3
+	 * date: 2020-07-07T23:55:35.970Z
 	 * license: MIT
 	 */
 
@@ -1330,10 +1330,10 @@
 	    statics: {
 	      version: '4.10.0',
 	      apis: {},
-	      init: function () {
+	      generate: function (inContext) {
 	        APIS.forEach(function (api) {
 	          var shortName = api.split('_')[1];
-	          this.apis[shortName] = nx.GLOBAL[api];
+	          this.apis[shortName] = inContext[api];
 	        }, this);
 	        nx.mix(this, this.apis);
 	      }
@@ -12205,10 +12205,10 @@
 	    },
 	    sdk: function () {
 	      return nx.mix({
-	        version: '1.0.14',
+	        version: '1.0.15',
 	        http,
 	        store: new nextGmStorage('aric')
-	      }, nextGmApi.init.call(nx.GLOBAL));
+	      }, nextGmApi.generate.call(this));
 	    }
 	  }
 	});
