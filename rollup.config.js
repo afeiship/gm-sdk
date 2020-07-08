@@ -32,7 +32,7 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    // terser({ output: { comments: false } }),
+    terser({ output: { comments: false } }),
     banner(comments),
     replace({
       '__VERSION__': pkg.version
