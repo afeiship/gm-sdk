@@ -2,8 +2,8 @@
  *  name: @feizheng/gm-sdk
  *  description: Sdk for tampermonkey based on jQuery/nx.
  *  homepage: https://github.com/afeiship/gm-sdk
- *  version: 1.0.16
- *  date: 2020-07-08T00:05:45.269Z
+ *  version: 1.0.17
+ *  date: 2020-07-08T00:12:22.187Z
  *  license: MIT
  */
 
@@ -12191,24 +12191,24 @@
 
 	var http = nextGmXhr.getInstance();
 
-	nx.declare({
+	nextJsCore2.declare({
 	  statics: {
 	    init: function () {
-	      nx.mix(
+	      nextJsCore2.mix(
 	        unsafeWindow,
 	        {
-	          nx: unsafeWindow.nx || nx,
+	          nx: unsafeWindow.nx || nextJsCore2,
 	          $: unsafeWindow.$ || jquery,
 	          gmsdk: this.sdk()
 	        }
 	      );
 	    },
 	    sdk: function () {
-	      return nx.mix({
-	        version: '1.0.16',
+	      return nextJsCore2.mix({
+	        version: '1.0.17',
 	        http,
 	        store: new nextGmStorage('aric')
-	      }, nextGmApi.generate(this));
+	      }, nextGmApi.generate(nextJsCore2.GLOBAL));
 	    }
 	  }
 	});
