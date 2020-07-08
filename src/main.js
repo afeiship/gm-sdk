@@ -23,7 +23,7 @@ nx.declare({
         version: '__VERSION__',
         http,
         store: new NxGmStorage('aric')
-      }, NxGmApi.generate.call(this));
+      }, NxGmApi.generate(this));
     }
   }
 });
