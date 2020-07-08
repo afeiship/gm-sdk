@@ -5,6 +5,8 @@ import NxGmApi from '@feizheng/next-gm-api';
 import $ from 'jquery';
 
 var http = NxGmXhr.getInstance();
+var apis = NxGmApi.generate(nx.GLOBAL);
+var store = new NxGmStorage('aric');
 
 nx.declare({
   statics: {
@@ -22,8 +24,8 @@ nx.declare({
       return nx.mix({
         version: '__VERSION__',
         http,
-        store: new NxGmStorage('aric')
-      }, NxGmApi.generate(nx.GLOBAL));
+        store,
+      }, apis);
     }
   }
 });

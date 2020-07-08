@@ -2,8 +2,8 @@
  *  name: @feizheng/gm-sdk
  *  description: Sdk for tampermonkey based on jQuery/nx.
  *  homepage: https://github.com/afeiship/gm-sdk
- *  version: 1.0.17
- *  date: 2020-07-08T00:12:22.187Z
+ *  version: 1.0.18
+ *  date: 2020-07-08T00:19:13.694Z
  *  license: MIT
  */
 
@@ -1293,8 +1293,8 @@
 	 * name: @feizheng/next-gm-api
 	 * description: APIs for tampermonkey.
 	 * homepage: https://github.com/afeiship/next-gm-api
-	 * version: 1.0.3
-	 * date: 2020-07-07T23:55:35.970Z
+	 * version: 1.0.4
+	 * date: 2020-07-08T00:18:21.730Z
 	 * license: MIT
 	 */
 
@@ -1329,13 +1329,13 @@
 	  var NxGmApi = nx.declare('nx.GmApi', {
 	    statics: {
 	      version: '4.10.0',
-	      apis: {},
 	      generate: function (inContext) {
+	        var results = {};
 	        APIS.forEach(function (api) {
 	          var shortName = api.split('_')[1];
-	          this.apis[shortName] = inContext[api];
-	        }, this);
-	        nx.mix(this, this.apis);
+	          results[shortName] = inContext[api];
+	        });
+	        return results;
 	      }
 	    }
 	  });
@@ -12190,6 +12190,8 @@
 	});
 
 	var http = nextGmXhr.getInstance();
+	var apis = nextGmApi.generate(nextJsCore2.GLOBAL);
+	var store = new nextGmStorage('aric');
 
 	nextJsCore2.declare({
 	  statics: {
@@ -12205,10 +12207,10 @@
 	    },
 	    sdk: function () {
 	      return nextJsCore2.mix({
-	        version: '1.0.17',
+	        version: '1.0.18',
 	        http,
-	        store: new nextGmStorage('aric')
-	      }, nextGmApi.generate(nextJsCore2.GLOBAL));
+	        store,
+	      }, apis);
 	    }
 	  }
 	});
