@@ -3,7 +3,7 @@
  *  description: Sdk for tampermonkey based on jQuery/nx.
  *  homepage: https://github.com/afeiship/gm-sdk
  *  version: 1.0.20
- *  date: 2020-07-08T00:52:56.745Z
+ *  date: 2020-07-09T13:44:58.957Z
  *  license: MIT
  */
 

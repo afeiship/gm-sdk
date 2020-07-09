@@ -7,20 +7,7 @@ import replace from 'rollup-plugin-replace';
 import pkg from './package.json';
 
 import { terser } from "rollup-plugin-terser";
-
-import '@feizheng/next-nice-comments';
-
-const comments = nx.niceComments(
-  [
-    'name: <%= pkg.name %>',
-    'description: <%= pkg.description %>',
-    'homepage: <%= pkg.homepage %>',
-    'version: <%= pkg.version %>',
-    'date: ' + new Date().toISOString(),
-    'license: <%= pkg.license %>'
-  ],
-  'pure'
-);
+import '@feizheng/next-rollup-banner';
 
 export default {
   input: 'src/main.js',
@@ -33,7 +20,7 @@ export default {
     resolve(),
     commonjs(),
     terser({ output: { comments: false } }),
-    banner(comments),
+    banner(nx.rollupBanner()),
     replace({
       '__VERSION__': pkg.version
     }),
