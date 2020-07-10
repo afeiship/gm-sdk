@@ -7,6 +7,7 @@ import $ from 'jquery';
 var http = NxGmXhr.getInstance();
 var apis = NxGmApi.generate(nx.GLOBAL);
 var store = new NxGmStorage('aric');
+var jquery = unsafeWindow.$ || $;
 
 nx.declare({
   statics: {
@@ -15,7 +16,9 @@ nx.declare({
         unsafeWindow,
         {
           nx: unsafeWindow.nx || nx,
-          $: unsafeWindow.$ || $,
+          $: nx.mix(jquery, {
+            version: jQuery.fn.jquery,
+          }),
           gmsdk: this.sdk()
         }
       )

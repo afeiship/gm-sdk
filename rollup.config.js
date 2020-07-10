@@ -1,9 +1,9 @@
 
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 import filesize from 'rollup-plugin-filesize';
-import commonjs from 'rollup-plugin-commonjs';
+import commonjs from '@rollup/plugin-commonjs';
 import banner from 'rollup-plugin-banner';
-import replace from 'rollup-plugin-replace';
+import replace from '@rollup/plugin-replace';
 import pkg from './package.json';
 
 import { terser } from "rollup-plugin-terser";
