@@ -17,7 +17,7 @@ nx.declare({
         {
           nx: unsafeWindow.nx || nx,
           $: nx.mix(jquery, {
-            version: jQuery.fn.jquery,
+            version: jquery.fn.jquery,
           }),
           gmsdk: this.sdk()
         }
