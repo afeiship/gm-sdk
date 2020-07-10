@@ -13,7 +13,7 @@ export default {
   input: 'src/main.js',
   output: {
     strict: false,
-    file: 'dist/gm-sdk.js',
+    file: 'dist/index.js',
     format: 'umd',
   },
   plugins: [

@@ -1,12 +1,13 @@
 {
   "name": "@feizheng/gm-sdk",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Sdk for tampermonkey based on jQuery/nx.",
   "homepage": "https://github.com/afeiship/gm-sdk",
   "author": {
     "name": "afeiship",
     "email": "1290657123@qq.com"
   },
+  "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c"
   },
