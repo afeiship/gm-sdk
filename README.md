@@ -36,10 +36,10 @@ npm i @feizheng/gm-sdk
 
 ## usage
 ```js
-// @require  https://cdn.jsdelivr.net/npm/@feizheng/gm-sdk/dist/gm-sdk.js
+// @require  https://cdn.jsdelivr.net/npm/@feizheng/gm-sdk
 
 // or lock the version
-// @require  https://cdn.jsdelivr.net/npm/@feizheng/gm-sdk@1.0.10/dist/gm-sdk.js
+// @require  https://cdn.jsdelivr.net/npm/@feizheng/gm-sdk@1.1.0
 ```
 
 ## resources
