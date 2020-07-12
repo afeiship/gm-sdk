@@ -21,11 +21,11 @@ npm i @feizheng/gm-sdk
 ```
 
 ## sdk
-| api   | description   |
-| ----- | ------------- |
-| $     | jquery        |
-| nx    | next-js-core2 |
-| gmsdk | -             |
+| api   | description                            |
+| ----- | -------------------------------------- |
+| $     | jquery(You need requre it by yourself) |
+| nx    | next-js-core2                          |
+| gmsdk | -                                      |
 
 ## gmsdk apis
 | api           | description             |
