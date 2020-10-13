@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/gm-sdk",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Sdk for tampermonkey based on jQuery/nx.",
   "homepage": "https://github.com/afeiship/gm-sdk",
   "author": {
@@ -31,6 +31,7 @@
     "@feizheng/next-gm-xhr": "^1.0.1",
     "@feizheng/next-js-core2": "^2.6.0",
     "@feizheng/next-range-date": "^1.0.1",
-    "@feizheng/next-sum": "^1.0.0"
+    "@feizheng/next-sum": "^1.0.0",
+    "@feizheng/next-wait-to-display": "^1.0.1"
   }
 }

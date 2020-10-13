@@ -4,7 +4,7 @@ import NxGmXhr from '@feizheng/next-gm-xhr';
 import nx from '@feizheng/next-js-core2';
 import '@feizheng/next-range-date';
 import '@feizheng/next-sum';
-
+import '@feizheng/next-wait-to-display';
 
 var http = NxGmXhr.getInstance();
 var apis = NxGmApi.generate(nx.GLOBAL);
