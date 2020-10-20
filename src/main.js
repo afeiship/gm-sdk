@@ -15,13 +15,16 @@ var gmVersion = '__VERSION__';
 nx.declare({
   statics: {
     init: function () {
+      this.nx();
       nx.mix(unsafeWindow, {
-        nx: unsafeWindow.nx || nx,
         $: nx.mix(unsafeWindow.$, {
           version: $.fn.jquery
         }),
         gmsdk: this.sdk()
       });
+    },
+    nx: function () {
+      !unsafeWindow.nx && (unsafeWindow.nx = nx);
     },
     sdk: function () {
       return nx.mix(
