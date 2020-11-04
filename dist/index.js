@@ -2,8 +2,8 @@
  *  name: @feizheng/gm-sdk
  *  description: Sdk for tampermonkey based on jQuery/nx.
  *  homepage: https://github.com/afeiship/gm-sdk
- *  version: 1.1.11
- *  date: 2020-11-04T12:39:04.490Z
+ *  version: 1.1.12
+ *  date: 2020-11-04T23:51:28.581Z
  *  license: MIT
  */
 
@@ -210,11 +210,11 @@ e=n.prototype)&&!1!==e.hasOwnProperty("isPrototypeOf"))},t.exports&&(t.exports=i
 	 * name: @feizheng/next-time-format
 	 * description: Time format for next.
 	 * homepage: https://github.com/afeiship/next-time-format
-	 * version: 1.0.4
-	 * date: 2020-10-14T01:30:21.453Z
+	 * version: 1.0.5
+	 * date: 2020-11-04T23:50:10.373Z
 	 * license: MIT
 	 */
-!function(){var n=n||this||window||Function("return this")(),i=n.nx||e,r=function(t){return(""+t).padStart(2,"0")};i.timeFormat=function(t){var n=parseInt(t%1e3/100),e=Math.floor(t/1e3%60),i=Math.floor(t/6e4%60),o=Math.floor(t/36e5%24);return{hour:o,minute:i,second:e,millisecond:n,datetime:[r(o),r(i),r(e)].join(":")}},t.exports&&(t.exports=i.timeFormat)}()})),n((function(t){
+!function(){var n=n||this||window||Function("return this")(),i=n.nx||e,r=function(t){return(""+t).padStart(2,"0")};i.timeFormat=function(t){var n=parseInt(t%1e3/100),e=Math.floor(t/1e3%60),i=Math.floor(t/6e4%60),o=Math.floor(t/36e5);return{hour:o,minute:i,second:e,millisecond:n,datetime:[r(o),r(i),r(e)].join(":")}},t.exports&&(t.exports=i.timeFormat)}()})),n((function(t){
 /*!
 	 * name: @feizheng/next-wait-to-display
 	 * description: Wait element display in document.
@@ -232,4 +232,4 @@ e=n.prototype)&&!1!==e.hasOwnProperty("isPrototypeOf"))},t.exports&&(t.exports=i
 	 * date: 2020-06-02T01:55:38.743Z
 	 * license: MIT
 	 */
-!function(){var n=n||this||window||Function("return this")(),i=n.nx||e;i.mapMap=function(t,n,e){var r={};return i.each(t,(function(i,o){var s=n.call(e,i,o,t);r[s.key]=s.value}),e),r},t.exports&&(t.exports=i.mapMap)}()})),x.getInstance()),g=i.generate(e.GLOBAL),v=new s("aric");e.declare({statics:{init:function(){this.nx(),e.mix(unsafeWindow,{$:e.mix(unsafeWindow.$,{version:$.fn.jquery}),gmsdk:this.sdk()})},nx:function(){!unsafeWindow.nx&&(unsafeWindow.nx=e)},sdk:function(){return e.mix({version:"1.1.11",http:y,store:v},g)}}})}));
+!function(){var n=n||this||window||Function("return this")(),i=n.nx||e;i.mapMap=function(t,n,e){var r={};return i.each(t,(function(i,o){var s=n.call(e,i,o,t);r[s.key]=s.value}),e),r},t.exports&&(t.exports=i.mapMap)}()})),x.getInstance()),g=i.generate(e.GLOBAL),v=new s("aric");e.declare({statics:{init:function(){this.nx(),e.mix(unsafeWindow,{$:e.mix(unsafeWindow.$,{version:$.fn.jquery}),gmsdk:this.sdk()})},nx:function(){!unsafeWindow.nx&&(unsafeWindow.nx=e)},sdk:function(){return e.mix({version:"1.1.12",http:y,store:v},g)}}})}));
