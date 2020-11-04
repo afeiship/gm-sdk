@@ -1,7 +1,8 @@
+import nx from '@feizheng/next-js-core2';
 import NxGmApi from '@feizheng/next-gm-api';
 import NxGmStorage from '@feizheng/next-gm-storage';
 import NxGmXhr from '@feizheng/next-gm-xhr';
-import nx from '@feizheng/next-js-core2';
+
 import '@feizheng/next-range-date';
 import '@feizheng/next-sum';
 import '@feizheng/next-time-format';
