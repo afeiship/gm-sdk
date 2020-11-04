@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/gm-sdk",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "Sdk for tampermonkey based on jQuery/nx.",
   "homepage": "https://github.com/afeiship/gm-sdk",
   "author": {
@@ -35,5 +35,16 @@
     "@feizheng/next-sum": "^1.0.0",
     "@feizheng/next-time-format": "^1.0.4",
     "@feizheng/next-wait-to-display": "^1.0.2"
-  }
+  },
+  "keywords": [
+    "tampermonkey",
+    "sdk",
+    "jquery",
+    "next",
+    "gm",
+    "greasyfork",
+    "http",
+    "xhr",
+    "ajax"
+  ]
 }

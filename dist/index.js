@@ -2,8 +2,8 @@
  *  name: @feizheng/gm-sdk
  *  description: Sdk for tampermonkey based on jQuery/nx.
  *  homepage: https://github.com/afeiship/gm-sdk
- *  version: 1.1.10
- *  date: 2020-11-04T03:06:53.142Z
+ *  version: 1.1.11
+ *  date: 2020-11-04T12:39:04.490Z
  *  license: MIT
  */
 
@@ -232,4 +232,4 @@ e=n.prototype)&&!1!==e.hasOwnProperty("isPrototypeOf"))},t.exports&&(t.exports=i
 	 * date: 2020-06-02T01:55:38.743Z
 	 * license: MIT
 	 */
-!function(){var n=n||this||window||Function("return this")(),i=n.nx||e;i.mapMap=function(t,n,e){var r={};return i.each(t,(function(i,o){var s=n.call(e,i,o,t);r[s.key]=s.value}),e),r},t.exports&&(t.exports=i.mapMap)}()})),x.getInstance()),g=i.generate(e.GLOBAL),v=new s("aric");e.declare({statics:{init:function(){this.nx(),e.mix(unsafeWindow,{$:e.mix(unsafeWindow.$,{version:$.fn.jquery}),gmsdk:this.sdk()})},nx:function(){!unsafeWindow.nx&&(unsafeWindow.nx=e)},sdk:function(){return e.mix({version:"1.1.10",http:y,store:v},g)}}})}));
+!function(){var n=n||this||window||Function("return this")(),i=n.nx||e;i.mapMap=function(t,n,e){var r={};return i.each(t,(function(i,o){var s=n.call(e,i,o,t);r[s.key]=s.value}),e),r},t.exports&&(t.exports=i.mapMap)}()})),x.getInstance()),g=i.generate(e.GLOBAL),v=new s("aric");e.declare({statics:{init:function(){this.nx(),e.mix(unsafeWindow,{$:e.mix(unsafeWindow.$,{version:$.fn.jquery}),gmsdk:this.sdk()})},nx:function(){!unsafeWindow.nx&&(unsafeWindow.nx=e)},sdk:function(){return e.mix({version:"1.1.11",http:y,store:v},g)}}})}));
