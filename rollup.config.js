@@ -19,7 +19,7 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    terser({ output: { comments: false } }),
+    terser({ output: { comments: true } }),
     banner(nx.rollupBanner()),
     replace({
       '__VERSION__': pkg.version
