@@ -6,6 +6,7 @@ import '@feizheng/next-range-date';
 import '@feizheng/next-sum';
 import '@feizheng/next-time-format';
 import '@feizheng/next-wait-to-display';
+import '@feizheng/next-map-map';
 
 var http = NxGmXhr.getInstance();
 var apis = NxGmApi.generate(nx.GLOBAL);
