@@ -8,6 +8,7 @@ import '@feizheng/next-sum';
 import '@feizheng/next-time-format';
 import '@feizheng/next-wait-to-display';
 import '@feizheng/next-map-map';
+import '@feizheng/next-date';
 import slog from 'shields-log';
 
 var http = NxGmXhr.getInstance();
