@@ -8,6 +8,7 @@ import '@feizheng/next-sum';
 import '@feizheng/next-time-format';
 import '@feizheng/next-wait-to-display';
 import '@feizheng/next-map-map';
+import slog from 'shields-log';
 
 var http = NxGmXhr.getInstance();
 var apis = NxGmApi.generate(nx.GLOBAL);
@@ -33,7 +34,8 @@ nx.declare({
         {
           version: gmVersion,
           http,
-          store
+          store,
+          slog
         },
         apis
       );
