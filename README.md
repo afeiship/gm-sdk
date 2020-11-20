@@ -17,7 +17,7 @@
 
 ## installation
 ```shell
-npm i @feizheng/gm-sdk
+npm i @jswork/gm-sdk
 ```
 
 ## sdk
@@ -36,10 +36,10 @@ npm i @feizheng/gm-sdk
 
 ## usage
 ```js
-// @require  https://cdn.jsdelivr.net/npm/@feizheng/gm-sdk
+// @require  https://cdn.jsdelivr.net/npm/@jswork/gm-sdk
 
 // or lock the version
-// @require  https://cdn.jsdelivr.net/npm/@feizheng/gm-sdk@1.1.0
+// @require  https://cdn.jsdelivr.net/npm/@jswork/gm-sdk@1.0.0
 ```
 
 ## resources
@@ -49,14 +49,14 @@ npm i @feizheng/gm-sdk
 ## license
 Code released under [the MIT license](https://github.com/afeiship/gm-sdk/blob/master/LICENSE.txt).
 
-[version-image]: https://img.shields.io/npm/v/@feizheng/gm-sdk
-[version-url]: https://npmjs.org/package/@feizheng/gm-sdk
+[version-image]: https://img.shields.io/npm/v/@jswork/gm-sdk
+[version-url]: https://npmjs.org/package/@jswork/gm-sdk
 
-[license-image]: https://img.shields.io/npm/l/@feizheng/gm-sdk
+[license-image]: https://img.shields.io/npm/l/@jswork/gm-sdk
 [license-url]: https://github.com/afeiship/next-guid/blob/master/LICENSE.txt
 
-[size-image]: https://img.shields.io/bundlephobia/minzip/@feizheng/gm-sdk
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/gm-sdk
 [size-url]: https://github.com/afeiship/next-guid/blob/master/dist/next-guid.min.js
 
-[download-image]: https://img.shields.io/npm/dm/@feizheng/gm-sdk
-[download-url]: https://www.npmjs.com/package/@feizheng/gm-sdk
+[download-image]: https://img.shields.io/npm/dm/@jswork/gm-sdk
+[download-url]: https://www.npmjs.com/package/@jswork/gm-sdk

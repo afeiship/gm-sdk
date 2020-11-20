@@ -7,7 +7,7 @@ import replace from '@rollup/plugin-replace';
 import pkg from './package.json';
 
 import { terser } from "rollup-plugin-terser";
-import '@feizheng/next-rollup-banner';
+import '@jswork/next-rollup-banner';
 
 export default {
   input: 'src/main.js',

@@ -1,14 +1,14 @@
-import nx from '@feizheng/next-js-core2';
-import NxGmApi from '@feizheng/next-gm-api';
-import NxGmStorage from '@feizheng/next-gm-storage';
-import NxGmXhr from '@feizheng/next-gm-xhr';
+import nx from '@jswork/next';
+import NxGmApi from '@jswork/next-gm-api';
+import NxGmStorage from '@jswork/next-gm-storage';
+import NxGmXhr from '@jswork/next-gm-xhr';
 
-import '@feizheng/next-range-date';
-import '@feizheng/next-sum';
-import '@feizheng/next-time-format';
-import '@feizheng/next-wait-to-display';
-import '@feizheng/next-map-map';
-import '@feizheng/next-date';
+import '@jswork/next-range-date';
+import '@jswork/next-sum';
+import '@jswork/next-time-format';
+import '@jswork/next-wait-to-display';
+import '@jswork/next-map-map';
+import '@jswork/next-date';
 import slog from 'shields-log';
 
 var http = NxGmXhr.getInstance();
