@@ -31,6 +31,7 @@
   "dependencies": {
     "@jswork/next": "^1.0.2",
     "@jswork/next-date": "^1.0.0",
+    "@jswork/next-domain": "^1.0.0",
     "@jswork/next-gm-api": "^1.0.0",
     "@jswork/next-gm-storage": "^1.0.0",
     "@jswork/next-gm-xhr": "^1.0.0",
