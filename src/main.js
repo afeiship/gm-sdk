@@ -10,6 +10,7 @@ import '@jswork/next-wait-to-display';
 import '@jswork/next-map-map';
 import '@jswork/next-date';
 import '@jswork/next-domain';
+import '@jswork/next-weeks';
 import slog from 'shields-log';
 
 var http = NxGmXhr.getInstance();
