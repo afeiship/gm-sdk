@@ -21,7 +21,7 @@ const gmVersion = '__VERSION__';
 nx.declare({
   statics: {
     init: function () {
-      if (typeof nx.sdk === 'function') return;
+      if (typeof this.sdk === 'function') return;
       this.nx();
       nx.mix(unsafeWindow, {
         $: nx.mix(unsafeWindow.$, {
