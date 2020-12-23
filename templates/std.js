@@ -6,7 +6,6 @@
 // @author       <%= author %>
 // @match        *://*/*
 // @require  https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js
-// @require  https://cdn.jsdelivr.net/npm/@jswork/next-js-core2@2.5.0/dist/next-js-core2.js
 // @grant GM_addStyle
 // @grant GM_deleteValue
 // @grant GM_listValues

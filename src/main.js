@@ -13,14 +13,15 @@ import '@jswork/next-domain';
 import '@jswork/next-weeks';
 import slog from 'shields-log';
 
-var http = NxGmXhr.getInstance();
-var apis = NxGmApi.generate(nx.GLOBAL);
-var store = new NxGmStorage('aric');
-var gmVersion = '__VERSION__';
+const http = NxGmXhr.getInstance();
+const apis = NxGmApi.generate(nx.GLOBAL);
+const store = new NxGmStorage('aric');
+const gmVersion = '__VERSION__';
 
 nx.declare({
   statics: {
     init: function () {
+      if (typeof nx.sdk === 'function') return;
       this.nx();
       nx.mix(unsafeWindow, {
         $: nx.mix(unsafeWindow.$, {
