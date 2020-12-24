@@ -37,6 +37,7 @@
     "@jswork/next-gm-xhr": "^1.0.0",
     "@jswork/next-map-map": "^1.0.0",
     "@jswork/next-range-date": "^1.0.0",
+    "@jswork/next-scroll-to": "^1.0.0",
     "@jswork/next-sum": "^1.0.0",
     "@jswork/next-time-format": "^1.0.1",
     "@jswork/next-wait-to-display": "^1.0.0",
