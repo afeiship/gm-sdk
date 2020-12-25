@@ -11,6 +11,7 @@ import '@jswork/next-map-map';
 import '@jswork/next-date';
 import '@jswork/next-domain';
 import '@jswork/next-weeks';
+import '@jswork/next-scroll-to';
 import slog from 'shields-log';
 
 const http = NxGmXhr.getInstance();
