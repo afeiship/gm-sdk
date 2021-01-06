@@ -20,11 +20,11 @@
 npm i @jswork/gm-sdk
 ```
 
-## sdk
+## sdks
 | api   | description                            |
 | ----- | -------------------------------------- |
 | $     | jquery(You need requre it by yourself) |
-| nx    | next-js-core2                          |
+| nx    | @jswork/next                         |
 | gmsdk | -                                      |
 
 ## gmsdk apis
