@@ -12,6 +12,10 @@ import '@jswork/next-date';
 import '@jswork/next-domain';
 import '@jswork/next-weeks';
 import '@jswork/next-scroll-to';
+import '@jswork/next-camelize';
+import '@jswork/next-classify';
+import '@jswork/next-kebab-case';
+import '@jswork/next-underscored';
 import slog from 'shields-log';
 
 const http = NxGmXhr.getInstance();

@@ -1,6 +1,6 @@
 {
   "name": "@jswork/gm-sdk",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Sdk for tampermonkey based on jQuery/nx.",
   "homepage": "https://github.com/afeiship/gm-sdk",
   "author": {
@@ -42,6 +42,10 @@
     "@jswork/next-time-format": "^1.0.3",
     "@jswork/next-wait-to-display": "^1.0.2",
     "@jswork/next-weeks": "^1.0.4",
+    "@jswork/next-camelize": "^1.0.0",
+    "@jswork/next-classify": "^1.0.0",
+    "@jswork/next-kebab-case": "^1.0.1",
+    "@jswork/next-underscored": "^1.0.0",
     "shields-log": "^1.0.4"
   },
   "keywords": [
