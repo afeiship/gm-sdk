@@ -29,7 +29,7 @@ nx.declare({
       if (typeof gmsdk !== 'undefined') return;
       this.nx();
       nx.mix(unsafeWindow, {
-        $: nx.mix(unsafeWindow.$, {
+        $: nx.mix($, {
           version: $.fn.jquery
         }),
         gmsdk: this.sdk()
