@@ -29,12 +29,12 @@ nx.declare({
     init: function () {
       if (typeof gmsdk !== 'undefined') return;
       this.nx();
-      nx.mix(unsafeWindow, {
-        $: nx.mix($, {
-          version: $.fn.jquery
-        }),
-        gmsdk: this.sdk()
-      });
+      this.jquery();
+      nx.mix(unsafeWindow, { gmsdk: this.sdk() });
+    },
+    jquery: function () {
+      !unsafeWindow.$ && (unsafeWindow.$ = $);
+      unsafeWindow.$.version = unsafeWindow.$.fn.jquery;
     },
     nx: function () {
       !unsafeWindow.nx && (unsafeWindow.nx = nx);
