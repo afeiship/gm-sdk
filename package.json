@@ -1,6 +1,6 @@
 {
   "name": "@jswork/gm-sdk",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Sdk for tampermonkey based on jQuery/nx.",
   "homepage": "https://github.com/afeiship/gm-sdk",
   "author": {
