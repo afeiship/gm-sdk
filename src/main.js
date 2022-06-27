@@ -20,7 +20,7 @@ import '@jswork/next-hashlize';
 import slog from 'shields-log';
 
 const http = NxGmXhr.getInstance();
-const apis = NxGmApi.generate(nx.GLOBAL);
+const apis = NxGmApi.generate(unsafeWindow);
 const store = new NxGmStorage('aric');
 const gmVersion = '__VERSION__';
 
