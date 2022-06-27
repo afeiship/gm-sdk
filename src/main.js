@@ -20,9 +20,12 @@ import '@jswork/next-hashlize';
 import slog from 'shields-log';
 
 const http = NxGmXhr.getInstance();
-const apis = NxGmApi.generate(unsafeWindow);
+const apis = NxGmApi.generate(nx.GLOBAL);
 const store = new NxGmStorage('aric');
 const gmVersion = '__VERSION__';
+
+slog({ title: 'gmsdk version', content: gmVersion });
+console.log('gmsdk preload', window.GM_setClipboard);
 
 nx.declare({
   statics: {
