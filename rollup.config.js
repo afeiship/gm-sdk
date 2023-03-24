@@ -1,4 +1,3 @@
-
 import resolve from '@rollup/plugin-node-resolve';
 import filesize from 'rollup-plugin-filesize';
 import commonjs from '@rollup/plugin-commonjs';
@@ -6,7 +5,7 @@ import banner from 'rollup-plugin-banner';
 import replace from '@rollup/plugin-replace';
 import pkg from './package.json';
 
-import { terser } from "rollup-plugin-terser";
+import { terser } from 'rollup-plugin-terser';
 import '@jswork/next-rollup-banner';
 
 export default {
@@ -14,7 +13,7 @@ export default {
   output: {
     strict: false,
     file: 'dist/index.js',
-    format: 'umd',
+    format: 'umd'
   },
   plugins: [
     resolve(),
@@ -22,7 +21,8 @@ export default {
     terser({ output: { comments: false } }),
     banner(nx.rollupBanner()),
     replace({
-      '__VERSION__': pkg.version
+      preventAssignment: true,
+      __VERSION__: pkg.version
     }),
     filesize()
   ]
