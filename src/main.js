@@ -33,6 +33,7 @@ nx.declare({
       if (typeof gmsdk !== 'undefined') return;
       this.nx();
       this.jquery();
+      nx.set(nx, 'gmWindow', unsafeWindow);
       nx.mix(unsafeWindow, { gmsdk: this.sdk() });
     },
     jquery: function () {
