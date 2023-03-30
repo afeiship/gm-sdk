@@ -32,7 +32,7 @@
     "@jswork/next": "^1.1.5",
     "@jswork/next-camelize": "^1.0.0",
     "@jswork/next-classify": "^1.0.0",
-    "@jswork/next-date": "^1.0.14",
+    "@jswork/next-date": "^1.0.10",
     "@jswork/next-domain": "^1.0.5",
     "@jswork/next-gm-api": "^1.0.2",
     "@jswork/next-gm-storage": "^1.0.4",

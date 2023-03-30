@@ -15,9 +15,12 @@ export default {
     file: 'dist/index.js',
     format: 'umd'
   },
+  onwarn: function (warning) {
+    if (warning.code !== 'THIS_IS_UNDEFINED') console.error(warning.message);
+  },
   plugins: [
     resolve(),
-    commonjs(),
+    commonjs({ esmExternals: true }),
     terser({ output: { comments: false } }),
     banner(nx.rollupBanner()),
     replace({
