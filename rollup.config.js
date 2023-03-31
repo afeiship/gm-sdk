@@ -20,9 +20,9 @@ export default {
   },
   plugins: [
     resolve(),
-    commonjs({ esmExternals: true }),
-    terser({ output: { comments: false } }),
-    banner(nx.rollupBanner()),
+    commonjs(),
+    // terser({ output: { comments: false } }),
+    // banner(nx.rollupBanner()),
     replace({
       preventAssignment: true,
       __VERSION__: pkg.version
