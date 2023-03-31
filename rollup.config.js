@@ -22,7 +22,7 @@ export default {
     resolve(),
     commonjs(),
     // terser({ output: { comments: false } }),
-    // banner(nx.rollupBanner()),
+    banner(nx.rollupBanner()),
     replace({
       preventAssignment: true,
       __VERSION__: pkg.version
