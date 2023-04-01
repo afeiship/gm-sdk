@@ -45,6 +45,7 @@
     "@jswork/next-sum": "^1.0.2",
     "@jswork/next-time-format": "^1.0.3",
     "@jswork/next-underscored": "^1.0.0",
+    "@jswork/next-unique": "^1.0.1",
     "@jswork/next-wait-to-display": "^1.0.7",
     "@jswork/next-weeks": "^1.0.4",
     "shields-log": "^1.0.4"
