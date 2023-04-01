@@ -17,6 +17,8 @@ import '@jswork/next-classify';
 import '@jswork/next-kebab-case';
 import '@jswork/next-underscored';
 import '@jswork/next-hashlize';
+import '@jswork/next-gm-app';
+
 import slog from 'shields-log';
 
 const http = NxGmXhr.getInstance();
