@@ -31,21 +31,21 @@ console.log('gmsdk preload', window.GM_setClipboard);
 
 nx.declare({
   statics: {
-    init: function () {
+    init: function() {
       if (typeof gmsdk !== 'undefined') return;
       this.nx();
       this.jquery();
       nx.set(nx, 'gmWindow', unsafeWindow);
       nx.mix(unsafeWindow, { gmsdk: this.sdk() });
     },
-    jquery: function () {
+    jquery: function() {
       !unsafeWindow.$ && (unsafeWindow.$ = $);
       unsafeWindow.$.version = unsafeWindow.$.fn.jquery;
     },
-    nx: function () {
+    nx: function() {
       !unsafeWindow.nx && (unsafeWindow.nx = nx);
     },
-    sdk: function () {
+    sdk: function() {
       return nx.mix(
         {
           version: gmVersion,
