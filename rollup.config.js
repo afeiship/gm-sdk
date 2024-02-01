@@ -5,7 +5,6 @@ import banner from 'rollup-plugin-banner';
 import replace from '@rollup/plugin-replace';
 import pkg from './package.json';
 
-import { terser } from 'rollup-plugin-terser';
 import '@jswork/next-rollup-banner';
 
 export default {
