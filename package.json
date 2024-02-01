@@ -9,6 +9,9 @@
     "email": "1290657123@qq.com"
   },
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c",
     "release": "release-it"
