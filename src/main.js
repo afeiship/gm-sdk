@@ -1,8 +1,9 @@
 import nx from '@jswork/next';
 import NxGmApi from '@jswork/next-gm-api';
 import NxGmStorage from '@jswork/next-gm-storage';
-import NxGmXhr from '@jswork/next-gm-xhr';
+import httpSchema from '@jswork/http-schema';
 
+import '@jswork/next-gm-xhr';
 import '@jswork/next-range-date';
 import '@jswork/next-sum';
 import '@jswork/next-time-format';
@@ -21,13 +22,21 @@ import '@jswork/next-unique';
 import '@jswork/next-gm-app';
 import slog from 'shields-log';
 
-const http = NxGmXhr.getInstance();
 const apis = NxGmApi.generate(nx.GLOBAL);
 const store = new NxGmStorage('aric');
 const gmVersion = '__VERSION__';
 
+const initHttpSchema = function(inSchema, inOptions) {
+  httpSchema(inSchema, {
+    harmony: true,
+    adapter: 'GmXhr',
+    slim: true,
+    interceptors: [],
+    ...inOptions
+  })
+};
+
 slog({ title: 'gmsdk version', content: gmVersion });
-console.log('gmsdk preload', window.GM_setClipboard);
 
 nx.declare({
   statics: {
@@ -49,7 +58,7 @@ nx.declare({
       return nx.mix(
         {
           version: gmVersion,
-          http,
+          initHttpSchema,
           store,
           slog
         },
