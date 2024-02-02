@@ -25,7 +25,7 @@ import slog from 'shields-log';
 const apis = NxGmApi.generate(nx.GLOBAL);
 const store = new NxGmStorage('aric');
 const gmVersion = '__VERSION__';
-const initHttpSchema = function(inSchema, inOptions) {
+const httpSchemaWrap = function(inSchema, inOptions) {
   httpSchema(inSchema, {
     harmony: true,
     adapter: 'GmXhr',
@@ -58,7 +58,7 @@ nx.declare({
       return nx.mix(
         {
           version: gmVersion,
-          initHttpSchema,
+          httpSchema: httpSchemaWrap,
           store,
           slog
         },
