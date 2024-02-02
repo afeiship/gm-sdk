@@ -41,7 +41,6 @@ nx.declare({
   statics: {
     init: function() {
       if (typeof gmsdk !== 'undefined') return;
-      const apis = NxGmApi.generate(nx.GLOBAL);
       this.nx();
       this.jquery();
       nx.set(nx, 'gmWindow', unsafeWindow);
@@ -55,6 +54,7 @@ nx.declare({
       !unsafeWindow.nx && (unsafeWindow.nx = nx);
     },
     sdk: function() {
+      const apis = NxGmApi.generate(nx.GLOBAL);
       return nx.mix(
         {
           version: gmVersion,
