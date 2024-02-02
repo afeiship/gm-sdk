@@ -22,6 +22,7 @@ import '@jswork/next-unique';
 import '@jswork/next-gm-app';
 import slog from 'shields-log';
 
+const apis = NxGmApi.generate(nx.GLOBAL);
 const store = new NxGmStorage('aric');
 const gmVersion = '__VERSION__';
 
@@ -47,14 +48,13 @@ nx.declare({
       nx.mix(unsafeWindow, { gmsdk: this.sdk() });
     },
     jquery: function() {
-      !unsafeWindow.$ && (unsafeWindow.$ = $);
+      unsafeWindow.$ = unsafeWindow.$ || $;
       unsafeWindow.$.version = unsafeWindow.$.fn.jquery;
     },
     nx: function() {
-      !unsafeWindow.nx && (unsafeWindow.nx = nx);
+      unsafeWindow.nx = unsafeWindow.nx || nx;
     },
     sdk: function() {
-      const apis = NxGmApi.generate(nx.GLOBAL);
       return nx.mix(
         {
           version: gmVersion,
