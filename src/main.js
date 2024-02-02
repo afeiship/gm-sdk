@@ -22,7 +22,6 @@ import '@jswork/next-unique';
 import '@jswork/next-gm-app';
 import slog from 'shields-log';
 
-const apis = NxGmApi.generate(nx.GLOBAL);
 const store = new NxGmStorage('aric');
 const gmVersion = '__VERSION__';
 
@@ -42,6 +41,7 @@ nx.declare({
   statics: {
     init: function() {
       if (typeof gmsdk !== 'undefined') return;
+      const apis = NxGmApi.generate(nx.GLOBAL);
       this.nx();
       this.jquery();
       nx.set(nx, 'gmWindow', unsafeWindow);
