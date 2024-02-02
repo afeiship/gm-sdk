@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import { loadJsonFileSync } from 'load-json-file'
 import rollupBanner from '@jswork/rollup-banner';
+
 const pkg = loadJsonFileSync('./package.json');
 
 export default {
@@ -12,7 +13,7 @@ export default {
     strict: false,
     file: 'dist/index.js',
     format: 'umd',
-    banner: rollupBanner(),
+    banner: rollupBanner()
   },
   onwarn: function(warning) {
     if (warning.code !== 'THIS_IS_UNDEFINED') console.error(warning.message);
@@ -21,6 +22,7 @@ export default {
     resolve(),
     commonjs(),
     // terser({ output: { comments: false } }),
+    // banner(nx.rollupBanner()),
     replace({
       preventAssignment: true,
       __VERSION__: pkg.version

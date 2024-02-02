@@ -25,7 +25,6 @@ import slog from 'shields-log';
 const apis = NxGmApi.generate(nx.GLOBAL);
 const store = new NxGmStorage('aric');
 const gmVersion = '__VERSION__';
-
 const initHttpSchema = function(inSchema, inOptions) {
   httpSchema(inSchema, {
     harmony: true,
@@ -37,6 +36,7 @@ const initHttpSchema = function(inSchema, inOptions) {
 };
 
 slog({ title: 'gmsdk version', content: gmVersion });
+console.log('gmsdk preload', window.GM_setClipboard);
 
 nx.declare({
   statics: {
